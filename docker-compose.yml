@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  app:
+    build: .
+    command: "npm run dev"
+    volumes:
+      - .:/usr/app/
+      - node_modules:/usr/app/node_modules
+    ports:
+      - "3738:3738"
+volumes:
+  node_modules:
