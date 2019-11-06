@@ -1,6 +1,5 @@
 {
   "serviceName": "penny",
-  "logTz": "Asia/Kolkata",
   "headers": {
     "correlationId": "X-Correlation-Id"
   }

@@ -30,7 +30,9 @@
     "express": "^4.17.1",
     "express-query-boolean": "^2.0.0",
     "http-graceful-shutdown": "^2.3.2",
+    "knex": "^0.20.1",
     "moment-timezone": "^0.5.27",
+    "pg": "^7.12.1",
     "verror": "^1.10.0",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.2.1"

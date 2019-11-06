@@ -2,6 +2,7 @@ const express = require('express');
 
 const routes = express.Router();
 
+const test = require('src/routes/controllers/test');
 // Ping route
 routes.get('/ping', (req, res) => {
   res.json({
@@ -18,5 +19,7 @@ routes.get('/healthcheck', (req, res) => {
     data: [],
   });
 });
+
+routes.get('/test', test);
 
 module.exports = routes;

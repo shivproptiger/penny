@@ -39,11 +39,11 @@ ${info.level.toUpperCase()}: ${info.message}`);
 
 const format = winston.format.combine(
   winston.format.label({ label: { service: serviceName } }),
-  timestampFormat({ tz: config.get('logTz') }),
+  timestampFormat({ tz: process.env.TZ }),
   logLineFormat,
 );
 const winstonTransports = [];
-if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'beta') {
+if (['production', 'stage'].includes(process.env.NODE_ENV)) {
   winstonTransports.push(new WinstonDailyRotateFile(winstonTransportConfig.fileRotateConfig));
 } else {
   winstonTransports.push(new winston.transports.Console(winstonTransportConfig.consoleConfig));
