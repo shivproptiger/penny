@@ -43,7 +43,7 @@ const format = winston.format.combine(
   logLineFormat,
 );
 const winstonTransports = [];
-if (['production', 'stage'].includes(process.env.NODE_ENV)) {
+if (['production', 'beta', 'stage'].includes(process.env.NODE_ENV)) {
   winstonTransports.push(new WinstonDailyRotateFile(winstonTransportConfig.fileRotateConfig));
 } else {
   winstonTransports.push(new winston.transports.Console(winstonTransportConfig.consoleConfig));
